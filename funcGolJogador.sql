@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION golsPorJogador
 (
-  id_jogador    IN NUMBER  
+  pnIdJogador    IN NUMBER  
 ) RETURN NUMBER AS
 
   pnNumeroGols  NUMBER;
@@ -11,8 +11,8 @@ BEGIN
   INTO        pnNumeroGols
   FROM        gol, 
               jogo_jogador JJG
-  WHERE       gol.id_jogo_jogador = jogo_jogador.id_jogo_jogador
-  AND         jogo_jogador.id_jogador = id_jogador;
+  WHERE       gol.id_jogo_jogador = JJG.id_jogo_jogador
+  AND         JJG.id_jogador = pnIdJogador;
   
   RETURN pnNumeroGols;
   

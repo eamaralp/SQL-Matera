@@ -1,0 +1,5 @@
+BEGIN
+
+DBMS_OUTPUT.PUT_LINE(golsPorJogador(2));
+
+END;
